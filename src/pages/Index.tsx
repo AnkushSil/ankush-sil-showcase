@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Mail, MapPin, Github, Linkedin, ExternalLink, Calendar, Award, Users, Code, Briefcase, GraduationCap, Star, Download, Phone } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -89,19 +88,19 @@ const Index = () => {
         </div>
       </nav>
 
-      {/* Hero Section - Recognify Style */}
-      <section className="pt-24 pb-20 px-6">
+      {/* Hero Section - Vibrant Style */}
+      <section className="pt-24 pb-20 px-6 bg-background">
         <div className="container mx-auto max-w-6xl">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-8 animate-fade-in">
               <div className="space-y-4">
-                <div className="inline-flex items-center px-3 py-1 rounded-full bg-blue-subtle text-primary text-sm font-medium">
+                <div className="inline-flex items-center px-3 py-1 rounded-full bg-blue-vibrant text-primary text-sm font-medium border border-primary/20">
                   👋 Welcome to my portfolio
                 </div>
                 <h1 className="text-5xl lg:text-6xl font-bold text-foreground leading-tight">
                   Hi, I'm <span className="text-primary">Ankush Sil</span>
                 </h1>
-                <h2 className="text-2xl text-secondary font-semibold">Junior Software Developer</h2>
+                <h2 className="text-2xl text-modern-purple font-semibold">Junior Software Developer</h2>
                 <p className="text-xl text-muted-foreground leading-relaxed">
                   Software Developer Intern passionate about cloud computing and AI innovation
                 </p>
@@ -142,7 +141,7 @@ const Index = () => {
 
             <div className="flex justify-center lg:justify-end animate-slide-up">
               <div className="relative">
-                <div className="w-80 h-80 rounded-2xl overflow-hidden shadow-2xl bg-gradient-modern p-1">
+                <div className="w-80 h-80 rounded-2xl overflow-hidden shadow-2xl gradient-modern p-1">
                   <div className="w-full h-full rounded-xl overflow-hidden">
                     <img 
                       src="https://i.postimg.cc/tnpQz2Fk/profile-photo.jpg" 
@@ -161,7 +160,7 @@ const Index = () => {
       </section>
 
       {/* About Section */}
-      <section id="about" className="py-20 px-6 bg-gray-subtle">
+      <section id="about" className="py-20 px-6 bg-purple-vibrant">
         <div className="container mx-auto max-w-4xl">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-foreground mb-4">About Me</h2>
@@ -188,7 +187,7 @@ const Index = () => {
             <Card className="bg-card shadow-lg border-0 rounded-2xl hover:shadow-xl transition-shadow duration-300">
               <CardHeader className="pb-4">
                 <CardTitle className="flex items-center text-foreground text-xl">
-                  <div className="w-10 h-10 bg-blue-subtle rounded-lg flex items-center justify-center mr-3">
+                  <div className="w-10 h-10 bg-blue-vibrant rounded-lg flex items-center justify-center mr-3">
                     <Code className="w-5 h-5 text-primary" />
                   </div>
                   Technical Skills
@@ -197,7 +196,7 @@ const Index = () => {
               <CardContent>
                 <div className="space-y-3">
                   {skills.technical.map((skill) => (
-                    <div key={skill} className="flex items-center justify-between p-3 bg-blue-subtle rounded-lg">
+                    <div key={skill} className="flex items-center justify-between p-3 bg-blue-vibrant rounded-lg">
                       <span className="font-medium text-foreground">{skill}</span>
                       <Badge variant="secondary" className="bg-primary text-primary-foreground">Pro</Badge>
                     </div>
@@ -209,7 +208,7 @@ const Index = () => {
             <Card className="bg-card shadow-lg border-0 rounded-2xl hover:shadow-xl transition-shadow duration-300">
               <CardHeader className="pb-4">
                 <CardTitle className="flex items-center text-foreground text-xl">
-                  <div className="w-10 h-10 bg-green-subtle rounded-lg flex items-center justify-center mr-3">
+                  <div className="w-10 h-10 bg-green-vibrant rounded-lg flex items-center justify-center mr-3">
                     <Users className="w-5 h-5 text-modern-green" />
                   </div>
                   Soft Skills
@@ -218,7 +217,7 @@ const Index = () => {
               <CardContent>
                 <div className="space-y-3">
                   {skills.soft.map((skill) => (
-                    <div key={skill} className="flex items-center justify-between p-3 bg-green-subtle rounded-lg">
+                    <div key={skill} className="flex items-center justify-between p-3 bg-green-vibrant rounded-lg">
                       <span className="font-medium text-foreground">{skill}</span>
                       <Badge variant="secondary" className="bg-accent text-accent-foreground">Expert</Badge>
                     </div>
@@ -230,7 +229,7 @@ const Index = () => {
             <Card className="bg-card shadow-lg border-0 rounded-2xl hover:shadow-xl transition-shadow duration-300">
               <CardHeader className="pb-4">
                 <CardTitle className="flex items-center text-foreground text-xl">
-                  <div className="w-10 h-10 bg-orange-subtle rounded-lg flex items-center justify-center mr-3">
+                  <div className="w-10 h-10 bg-orange-vibrant rounded-lg flex items-center justify-center mr-3">
                     <Star className="w-5 h-5 text-modern-orange" />
                   </div>
                   Tools & Platforms
@@ -239,7 +238,7 @@ const Index = () => {
               <CardContent>
                 <div className="space-y-3">
                   {skills.tools.map((tool) => (
-                    <div key={tool} className="flex items-center justify-between p-3 bg-orange-subtle rounded-lg">
+                    <div key={tool} className="flex items-center justify-between p-3 bg-orange-vibrant rounded-lg">
                       <span className="font-medium text-foreground">{tool}</span>
                       <Badge variant="secondary" className="bg-secondary text-secondary-foreground">Advanced</Badge>
                     </div>
@@ -252,7 +251,7 @@ const Index = () => {
       </section>
 
       {/* Experience Section */}
-      <section id="experience" className="py-20 px-6 bg-gray-subtle">
+      <section id="experience" className="py-20 px-6 bg-cyan-vibrant">
         <div className="container mx-auto max-w-4xl">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-foreground mb-4">Work Experience</h2>
@@ -335,7 +334,7 @@ const Index = () => {
       </section>
 
       {/* Projects Section */}
-      <section id="projects" className="py-20 px-6 bg-gray-subtle">
+      <section id="projects" className="py-20 px-6 bg-pink-vibrant">
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-foreground mb-4">Featured Projects</h2>
@@ -415,7 +414,7 @@ const Index = () => {
       </section>
 
       {/* Interests */}
-      <section className="py-20 px-6 bg-gray-subtle">
+      <section className="py-20 px-6 bg-green-vibrant">
         <div className="container mx-auto max-w-4xl">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-foreground mb-4">Interests</h2>
@@ -424,7 +423,7 @@ const Index = () => {
           <div className="grid md:grid-cols-3 gap-8">
             <Card className="bg-card shadow-lg border-0 rounded-2xl text-center hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
               <CardContent className="p-8">
-                <div className="w-16 h-16 bg-blue-subtle rounded-2xl flex items-center justify-center mx-auto mb-4">
+                <div className="w-16 h-16 bg-blue-vibrant rounded-2xl flex items-center justify-center mx-auto mb-4">
                   <span className="text-3xl">💻</span>
                 </div>
                 <h3 className="font-bold text-lg text-primary mb-2">Keen Coder</h3>
@@ -433,7 +432,7 @@ const Index = () => {
             </Card>
             <Card className="bg-card shadow-lg border-0 rounded-2xl text-center hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
               <CardContent className="p-8">
-                <div className="w-16 h-16 bg-green-subtle rounded-2xl flex items-center justify-center mx-auto mb-4">
+                <div className="w-16 h-16 bg-green-vibrant rounded-2xl flex items-center justify-center mx-auto mb-4">
                   <span className="text-3xl">⚽</span>
                 </div>
                 <h3 className="font-bold text-lg text-modern-green mb-2">Football Player</h3>
@@ -442,7 +441,7 @@ const Index = () => {
             </Card>
             <Card className="bg-card shadow-lg border-0 rounded-2xl text-center hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
               <CardContent className="p-8">
-                <div className="w-16 h-16 bg-orange-subtle rounded-2xl flex items-center justify-center mx-auto mb-4">
+                <div className="w-16 h-16 bg-orange-vibrant rounded-2xl flex items-center justify-center mx-auto mb-4">
                   <span className="text-3xl">📚</span>
                 </div>
                 <h3 className="font-bold text-lg text-modern-orange mb-2">Lifelong Learner</h3>

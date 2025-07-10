@@ -3,105 +3,101 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Recognify-inspired design system with modern aesthetics */
+/* Recognify-inspired design system with vibrant dark aesthetics */
 @layer base {
   :root {
-    /* Modern neutral base with blue accents */
-    --background: 0 0% 98%; /* Very light gray background */
-    --foreground: 220 15% 20%; /* Dark charcoal text */
+    /* Vibrant dark base with colorful accents */
+    --background: 220 15% 8%; /* Rich dark background */
+    --foreground: 220 15% 95%; /* Light text */
 
-    --card: 0 0% 100%; /* Pure white cards */
-    --card-foreground: 220 15% 20%;
-
-    --popover: 0 0% 100%;
-    --popover-foreground: 220 15% 20%;
-
-    /* Primary: Professional Blue */
-    --primary: 217 91% 60%; /* Modern blue */
-    --primary-foreground: 0 0% 100%; /* White text on blue */
-
-    /* Secondary: Sophisticated Dark */
-    --secondary: 220 15% 25%; /* Professional dark gray */
-    --secondary-foreground: 0 0% 100%; /* White text on dark */
-
-    /* Muted: Light neutral */
-    --muted: 210 40% 95%;
-    --muted-foreground: 220 15% 45%;
-
-    /* Accent: Vibrant highlight */
-    --accent: 142 76% 36%; /* Success green accent */
-    --accent-foreground: 0 0% 100%; /* White text on accent */
-
-    /* Destructive: Modern red */
-    --destructive: 0 84% 60%;
-    --destructive-foreground: 0 0% 100%;
-
-    --border: 220 13% 91%;
-    --input: 220 13% 91%;
-    --ring: 217 91% 60%;
-
-    --radius: 0.5rem; /* Moderate rounded corners */
-
-    /* Sidebar colors */
-    --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 220 15% 20%;
-    --sidebar-primary: 217 91% 60%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 210 40% 95%;
-    --sidebar-accent-foreground: 220 15% 20%;
-    --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 217 91% 60%;
-
-    /* Modern color extensions */
-    --modern-blue: 217 91% 60%;
-    --modern-green: 142 76% 36%;
-    --modern-orange: 25 95% 53%;
-    --modern-purple: 259 94% 51%;
-    
-    /* Subtle background variants */
-    --blue-subtle: 217 91% 97%;
-    --green-subtle: 142 76% 96%;
-    --orange-subtle: 25 95% 97%;
-    --gray-subtle: 220 13% 97%;
-  }
-
-  .dark {
-    --background: 220 15% 9%;
-    --foreground: 220 15% 90%;
-
-    --card: 220 15% 12%;
-    --card-foreground: 220 15% 90%;
+    --card: 220 15% 12%; /* Dark cards with subtle contrast */
+    --card-foreground: 220 15% 95%;
 
     --popover: 220 15% 12%;
-    --popover-foreground: 220 15% 90%;
+    --popover-foreground: 220 15% 95%;
 
-    --primary: 217 91% 65%;
-    --primary-foreground: 220 15% 9%;
+    /* Primary: Vibrant Blue */
+    --primary: 217 91% 65%; /* Bright blue */
+    --primary-foreground: 220 15% 8%; /* Dark text on blue */
 
-    --secondary: 220 15% 20%;
-    --secondary-foreground: 220 15% 90%;
+    /* Secondary: Vibrant Purple */
+    --secondary: 259 94% 65%; /* Bright purple */
+    --secondary-foreground: 220 15% 95%; /* Light text on purple */
 
+    /* Muted: Subtle dark */
     --muted: 220 15% 15%;
-    --muted-foreground: 220 15% 65%;
+    --muted-foreground: 220 15% 70%;
 
-    --accent: 142 76% 40%;
-    --accent-foreground: 220 15% 9%;
+    /* Accent: Vibrant Green */
+    --accent: 142 76% 50%; /* Bright green accent */
+    --accent-foreground: 220 15% 8%; /* Dark text on accent */
 
+    /* Destructive: Vibrant red */
     --destructive: 0 84% 65%;
-    --destructive-foreground: 220 15% 9%;
+    --destructive-foreground: 220 15% 95%;
 
     --border: 220 15% 20%;
     --input: 220 15% 20%;
     --ring: 217 91% 65%;
 
-    --sidebar-background: 220 15% 9%;
-    --sidebar-foreground: 220 15% 90%;
+    --radius: 0.5rem;
+
+    /* Sidebar colors */
+    --sidebar-background: 220 15% 8%;
+    --sidebar-foreground: 220 15% 95%;
     --sidebar-primary: 217 91% 65%;
-    --sidebar-primary-foreground: 220 15% 9%;
+    --sidebar-primary-foreground: 220 15% 8%;
     --sidebar-accent: 220 15% 15%;
-    --sidebar-accent-foreground: 220 15% 90%;
+    --sidebar-accent-foreground: 220 15% 95%;
     --sidebar-border: 220 15% 20%;
     --sidebar-ring: 217 91% 65%;
+
+    /* Vibrant color extensions */
+    --modern-blue: 217 91% 65%;
+    --modern-green: 142 76% 50%;
+    --modern-orange: 25 95% 65%;
+    --modern-purple: 259 94% 65%;
+    --modern-cyan: 189 94% 60%;
+    --modern-pink: 325 84% 65%;
+    
+    /* Vibrant background variants */
+    --blue-vibrant: 217 91% 15%;
+    --green-vibrant: 142 76% 12%;
+    --orange-vibrant: 25 95% 15%;
+    --purple-vibrant: 259 94% 12%;
+    --cyan-vibrant: 189 94% 12%;
+    --pink-vibrant: 325 84% 12%;
+  }
+
+  .dark {
+    /* Keep same values since we're using dark theme */
+    --background: 220 15% 8%;
+    --foreground: 220 15% 95%;
+
+    --card: 220 15% 12%;
+    --card-foreground: 220 15% 95%;
+
+    --popover: 220 15% 12%;
+    --popover-foreground: 220 15% 95%;
+
+    --primary: 217 91% 65%;
+    --primary-foreground: 220 15% 8%;
+
+    --secondary: 259 94% 65%;
+    --secondary-foreground: 220 15% 95%;
+
+    --muted: 220 15% 15%;
+    --muted-foreground: 220 15% 70%;
+
+    --accent: 142 76% 50%;
+    --accent-foreground: 220 15% 8%;
+
+    --destructive: 0 84% 65%;
+    --destructive-foreground: 220 15% 95%;
+
+    --border: 220 15% 20%;
+    --input: 220 15% 20%;
+    --ring: 217 91% 65%;
   }
 }
 
@@ -146,33 +142,45 @@
     }
   }
 
-  /* Modern gradient utilities */
+  /* Vibrant gradient utilities */
   .gradient-modern {
     background: linear-gradient(135deg, hsl(var(--modern-blue)), hsl(var(--modern-purple)));
   }
   
   .gradient-accent {
-    background: linear-gradient(135deg, hsl(var(--modern-green)), hsl(var(--modern-blue)));
+    background: linear-gradient(135deg, hsl(var(--modern-green)), hsl(var(--modern-cyan)));
   }
 
-  /* Subtle background utilities */
-  .bg-blue-subtle {
-    background-color: hsl(var(--blue-subtle));
+  .gradient-warm {
+    background: linear-gradient(135deg, hsl(var(--modern-orange)), hsl(var(--modern-pink)));
+  }
+
+  /* Vibrant background utilities */
+  .bg-blue-vibrant {
+    background-color: hsl(var(--blue-vibrant));
   }
   
-  .bg-green-subtle {
-    background-color: hsl(var(--green-subtle));
+  .bg-green-vibrant {
+    background-color: hsl(var(--green-vibrant));
   }
   
-  .bg-orange-subtle {
-    background-color: hsl(var(--orange-subtle));
+  .bg-orange-vibrant {
+    background-color: hsl(var(--orange-vibrant));
   }
 
-  .bg-gray-subtle {
-    background-color: hsl(var(--gray-subtle));
+  .bg-purple-vibrant {
+    background-color: hsl(var(--purple-vibrant));
   }
 
-  /* Text color utilities */
+  .bg-cyan-vibrant {
+    background-color: hsl(var(--cyan-vibrant));
+  }
+
+  .bg-pink-vibrant {
+    background-color: hsl(var(--pink-vibrant));
+  }
+
+  /* Vibrant text color utilities */
   .text-modern-blue {
     color: hsl(var(--modern-blue));
   }
@@ -184,6 +192,18 @@
   .text-modern-orange {
     color: hsl(var(--modern-orange));
   }
+
+  .text-modern-purple {
+    color: hsl(var(--modern-purple));
+  }
+
+  .text-modern-cyan {
+    color: hsl(var(--modern-cyan));
+  }
+
+  .text-modern-pink {
+    color: hsl(var(--modern-pink));
+  }
 }
 
 /* Smooth scrolling */
@@ -191,7 +211,7 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Custom scrollbar */
+/* Custom scrollbar - vibrant theme */
 ::-webkit-scrollbar {
   width: 6px;
 }
