@@ -3,6 +3,7 @@ import { Mail, MapPin, Github, Linkedin, ExternalLink, Calendar, Award, Users, C
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
+import ContactForm from '@/components/ContactForm';
 
 const Index = () => {
   const skills = {
@@ -454,39 +455,75 @@ const Index = () => {
 
       {/* Contact Section */}
       <section id="contact" className="py-20 px-6 bg-background">
-        <div className="container mx-auto max-w-4xl">
+        <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-foreground mb-4">Get In Touch</h2>
             <p className="text-lg text-muted-foreground">Ready to start a conversation? Let's connect!</p>
           </div>
-          <Card className="bg-card shadow-lg border-0 rounded-2xl">
-            <CardContent className="p-10 text-center">
-              <p className="text-lg text-foreground mb-8">
-                I'm always open to discussing new opportunities and exciting projects. Let's connect!
-              </p>
-              <div className="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-6">
-                <Button 
-                  asChild
-                  className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-3 h-12"
-                >
-                  <a href="mailto:ankushsil041016@gmail.com">
-                    <Mail className="w-5 h-5 mr-3" />
-                    ankushsil041016@gmail.com
-                  </a>
-                </Button>
-                <Button 
-                  variant="outline" 
-                  asChild
-                  className="border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground px-8 py-3 h-12"
-                >
-                  <a href="https://www.linkedin.com/in/ankush-sil-355944251" target="_blank" rel="noopener noreferrer">
-                    <Linkedin className="w-5 h-5 mr-3" />
-                    LinkedIn
-                  </a>
-                </Button>
-              </div>
-            </CardContent>
-          </Card>
+          
+          <div className="grid lg:grid-cols-2 gap-12 items-start">
+            {/* Contact Info */}
+            <div className="space-y-8">
+              <Card className="bg-card shadow-lg border-0 rounded-2xl">
+                <CardContent className="p-8">
+                  <h3 className="text-2xl font-bold text-foreground mb-6">Let's work together</h3>
+                  <p className="text-lg text-muted-foreground mb-8">
+                    I'm always open to discussing new opportunities and exciting projects. Whether you have a project in mind or just want to chat about technology, feel free to reach out!
+                  </p>
+                  
+                  <div className="space-y-4">
+                    <div className="flex items-center space-x-4">
+                      <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
+                        <Mail className="w-6 h-6 text-primary" />
+                      </div>
+                      <div>
+                        <p className="font-semibold text-foreground">Email</p>
+                        <p className="text-muted-foreground">ankushsil041016@gmail.com</p>
+                      </div>
+                    </div>
+                    
+                    <div className="flex items-center space-x-4">
+                      <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
+                        <MapPin className="w-6 h-6 text-primary" />
+                      </div>
+                      <div>
+                        <p className="font-semibold text-foreground">Location</p>
+                        <p className="text-muted-foreground">Kolkata, West Bengal, India</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="flex space-x-4 mt-8">
+                    <Button 
+                      variant="outline" 
+                      asChild
+                      className="border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground"
+                    >
+                      <a href="https://www.linkedin.com/in/ankush-sil-355944251" target="_blank" rel="noopener noreferrer">
+                        <Linkedin className="w-5 h-5 mr-2" />
+                        LinkedIn
+                      </a>
+                    </Button>
+                    <Button 
+                      variant="outline" 
+                      asChild
+                      className="border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground"
+                    >
+                      <a href="https://github.com/AnkushSil" target="_blank" rel="noopener noreferrer">
+                        <Github className="w-5 h-5 mr-2" />
+                        GitHub
+                      </a>
+                    </Button>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+
+            {/* Contact Form */}
+            <div>
+              <ContactForm />
+            </div>
+          </div>
         </div>
       </section>
 
