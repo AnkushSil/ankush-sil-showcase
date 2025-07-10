@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Mail, MapPin, Github, Linkedin, ExternalLink, Calendar, Award, Users, Code, Briefcase, GraduationCap, Star } from 'lucide-react';
+import { Mail, MapPin, Github, Linkedin, ExternalLink, Calendar, Award, Users, Code, Briefcase, GraduationCap, Star, Download, Phone } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -63,78 +63,113 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      {/* Fixed Navigation with Primary Color */}
-      <nav className="fixed top-0 left-0 right-0 bg-primary/95 backdrop-blur-sm border-b border-primary-foreground/20 z-50 shadow-lg">
+      {/* Modern Navigation */}
+      <nav className="fixed top-0 left-0 right-0 bg-card/95 backdrop-blur-sm border-b border-border z-50 shadow-sm">
         <div className="container mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
-            <div className="text-xl font-bold text-primary-foreground">Ankush Sil</div>
-            <div className="flex space-x-6">
+            <div className="text-xl font-bold text-primary">Ankush Sil</div>
+            <div className="hidden md:flex space-x-8">
               {['About', 'Skills', 'Experience', 'Projects', 'Education', 'Contact'].map((item) => (
                 <button
                   key={item}
                   onClick={() => scrollToSection(item.toLowerCase())}
-                  className="text-primary-foreground/90 hover:text-primary-foreground transition-colors duration-200 font-medium hover:scale-105 transform"
+                  className="text-muted-foreground hover:text-primary transition-colors duration-200 font-medium text-sm"
                 >
                   {item}
                 </button>
               ))}
             </div>
+            <Button 
+              onClick={() => scrollToSection('contact')}
+              className="bg-primary hover:bg-primary/90 text-primary-foreground px-6 py-2 text-sm"
+            >
+              Contact Me
+            </Button>
           </div>
         </div>
       </nav>
 
-      {/* Hero Section with Gradient Background */}
-      <section className="pt-24 pb-16 px-6 gradient-primary">
-        <div className="container mx-auto max-w-4xl text-center">
-          <div className="mb-8 animate-fade-in">
-            <div className="w-36 h-36 mx-auto mb-6 rounded-full overflow-hidden shadow-2xl ring-8 ring-primary-foreground/20 transform hover:scale-105 transition-transform duration-300">
-              <img 
-                src="https://i.postimg.cc/tnpQz2Fk/profile-photo.jpg" 
-                alt="Ankush Sil" 
-                className="w-full h-full object-cover"
-              />
-            </div>
-            <h1 className="text-5xl md:text-6xl font-bold text-primary-foreground mb-4 drop-shadow-lg">
-              Ankush Sil
-            </h1>
-            <p className="text-2xl text-primary-foreground/95 mb-2 font-semibold">Junior Software Developer</p>
-            <p className="text-xl text-primary-foreground/90 mb-6">Software Developer Intern</p>
-            <div className="flex items-center justify-center space-x-4 text-primary-foreground/90 mb-8">
-              <div className="flex items-center space-x-2 bg-primary-foreground/20 px-4 py-2 rounded-full backdrop-blur-sm">
+      {/* Hero Section - Recognify Style */}
+      <section className="pt-24 pb-20 px-6">
+        <div className="container mx-auto max-w-6xl">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div className="space-y-8 animate-fade-in">
+              <div className="space-y-4">
+                <div className="inline-flex items-center px-3 py-1 rounded-full bg-blue-subtle text-primary text-sm font-medium">
+                  👋 Welcome to my portfolio
+                </div>
+                <h1 className="text-5xl lg:text-6xl font-bold text-foreground leading-tight">
+                  Hi, I'm <span className="text-primary">Ankush Sil</span>
+                </h1>
+                <h2 className="text-2xl text-secondary font-semibold">Junior Software Developer</h2>
+                <p className="text-xl text-muted-foreground leading-relaxed">
+                  Software Developer Intern passionate about cloud computing and AI innovation
+                </p>
+              </div>
+              
+              <div className="flex items-center space-x-2 text-muted-foreground">
                 <MapPin className="w-5 h-5" />
-                <span className="font-medium">Kolkata, West Bengal, India</span>
+                <span>Kolkata, West Bengal, India</span>
+              </div>
+
+              <div className="flex flex-wrap gap-4">
+                <Button 
+                  onClick={() => scrollToSection('contact')}
+                  className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-3 h-12"
+                >
+                  <Mail className="w-5 h-5 mr-2" />
+                  Get In Touch
+                </Button>
+                <Button 
+                  variant="outline" 
+                  asChild
+                  className="border-2 border-border hover:bg-muted px-8 py-3 h-12"
+                >
+                  <a href="https://github.com/AnkushSil" target="_blank" rel="noopener noreferrer">
+                    <Github className="w-5 h-5 mr-2" />
+                    GitHub
+                  </a>
+                </Button>
+                <Button 
+                  variant="outline"
+                  className="border-2 border-border hover:bg-muted px-8 py-3 h-12"
+                >
+                  <Download className="w-5 h-5 mr-2" />
+                  Resume
+                </Button>
               </div>
             </div>
-            <div className="flex justify-center space-x-4">
-              <Button 
-                onClick={() => scrollToSection('contact')}
-                className="bg-secondary hover:bg-secondary/90 text-secondary-foreground px-8 py-3 rounded-full shadow-xl transition-all duration-200 hover:shadow-2xl hover:scale-105 transform font-semibold"
-              >
-                <Mail className="w-5 h-5 mr-2" />
-                Get In Touch
-              </Button>
-              <Button 
-                variant="outline" 
-                asChild
-                className="border-2 border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary px-8 py-3 rounded-full transition-all duration-200 font-semibold hover:scale-105 transform shadow-xl"
-              >
-                <a href="https://github.com/AnkushSil" target="_blank" rel="noopener noreferrer">
-                  <Github className="w-5 h-5 mr-2" />
-                  GitHub
-                </a>
-              </Button>
+
+            <div className="flex justify-center lg:justify-end animate-slide-up">
+              <div className="relative">
+                <div className="w-80 h-80 rounded-2xl overflow-hidden shadow-2xl bg-gradient-modern p-1">
+                  <div className="w-full h-full rounded-xl overflow-hidden">
+                    <img 
+                      src="https://i.postimg.cc/tnpQz2Fk/profile-photo.jpg" 
+                      alt="Ankush Sil" 
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                </div>
+                <div className="absolute -bottom-4 -right-4 bg-accent text-accent-foreground px-4 py-2 rounded-xl shadow-lg">
+                  <span className="font-semibold">Available for work</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
       {/* About Section */}
-      <section id="about" className="py-20 px-6 bg-blue-light">
+      <section id="about" className="py-20 px-6 bg-gray-subtle">
         <div className="container mx-auto max-w-4xl">
-          <h2 className="text-4xl font-bold text-primary mb-12 text-center">About Me</h2>
-          <Card className="bg-card shadow-2xl rounded-2xl border-2 border-primary/20 hover:shadow-3xl transition-shadow duration-300">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold text-foreground mb-4">About Me</h2>
+            <p className="text-lg text-muted-foreground">Get to know more about my background and passion</p>
+          </div>
+          <Card className="bg-card shadow-lg border-0 rounded-2xl">
             <CardContent className="p-10">
-              <p className="text-xl text-foreground leading-relaxed font-medium">
+              <p className="text-lg text-foreground leading-relaxed">
                 As a proactive learner and coding enthusiast, I thrive on challenges and collaborative projects that enhance my technical skills. Currently pursuing a Bachelor's in Cloud Computing & Automation, I have contributed to innovative projects like Genius (an AI-powered SaaS platform) and a nanotechnology-based water harvesting initiative. I bring strong interpersonal skills, a growth mindset, and a commitment to excellence in all my endeavors.
               </p>
             </CardContent>
@@ -142,60 +177,72 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Skills Section with Triadic Colors */}
+      {/* Skills Section */}
       <section id="skills" className="py-20 px-6 bg-background">
         <div className="container mx-auto max-w-6xl">
-          <h2 className="text-4xl font-bold text-primary mb-16 text-center">Skills & Expertise</h2>
-          <div className="grid md:grid-cols-3 gap-10">
-            <Card className="bg-card shadow-2xl rounded-2xl border-2 border-primary/30 hover:shadow-3xl transition-all duration-300 hover:-translate-y-2 transform">
-              <CardHeader className="bg-blue-light rounded-t-2xl">
-                <CardTitle className="flex items-center text-primary text-xl">
-                  <Code className="w-6 h-6 mr-3" />
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-foreground mb-4">Skills & Expertise</h2>
+            <p className="text-lg text-muted-foreground">Technologies and tools I work with</p>
+          </div>
+          <div className="grid md:grid-cols-3 gap-8">
+            <Card className="bg-card shadow-lg border-0 rounded-2xl hover:shadow-xl transition-shadow duration-300">
+              <CardHeader className="pb-4">
+                <CardTitle className="flex items-center text-foreground text-xl">
+                  <div className="w-10 h-10 bg-blue-subtle rounded-lg flex items-center justify-center mr-3">
+                    <Code className="w-5 h-5 text-primary" />
+                  </div>
                   Technical Skills
                 </CardTitle>
               </CardHeader>
-              <CardContent className="p-6">
-                <div className="flex flex-wrap gap-3">
+              <CardContent>
+                <div className="space-y-3">
                   {skills.technical.map((skill) => (
-                    <Badge key={skill} className="bg-primary text-primary-foreground hover:bg-primary/90 px-3 py-1 text-sm font-semibold">
-                      {skill}
-                    </Badge>
+                    <div key={skill} className="flex items-center justify-between p-3 bg-blue-subtle rounded-lg">
+                      <span className="font-medium text-foreground">{skill}</span>
+                      <Badge variant="secondary" className="bg-primary text-primary-foreground">Pro</Badge>
+                    </div>
                   ))}
                 </div>
               </CardContent>
             </Card>
 
-            <Card className="bg-card shadow-2xl rounded-2xl border-2 border-secondary/30 hover:shadow-3xl transition-all duration-300 hover:-translate-y-2 transform">
-              <CardHeader className="bg-orange-light rounded-t-2xl">
-                <CardTitle className="flex items-center text-secondary text-xl">
-                  <Users className="w-6 h-6 mr-3" />
+            <Card className="bg-card shadow-lg border-0 rounded-2xl hover:shadow-xl transition-shadow duration-300">
+              <CardHeader className="pb-4">
+                <CardTitle className="flex items-center text-foreground text-xl">
+                  <div className="w-10 h-10 bg-green-subtle rounded-lg flex items-center justify-center mr-3">
+                    <Users className="w-5 h-5 text-modern-green" />
+                  </div>
                   Soft Skills
                 </CardTitle>
               </CardHeader>
-              <CardContent className="p-6">
-                <div className="flex flex-wrap gap-3">
+              <CardContent>
+                <div className="space-y-3">
                   {skills.soft.map((skill) => (
-                    <Badge key={skill} className="bg-secondary text-secondary-foreground hover:bg-secondary/90 px-3 py-1 text-sm font-semibold">
-                      {skill}
-                    </Badge>
+                    <div key={skill} className="flex items-center justify-between p-3 bg-green-subtle rounded-lg">
+                      <span className="font-medium text-foreground">{skill}</span>
+                      <Badge variant="secondary" className="bg-accent text-accent-foreground">Expert</Badge>
+                    </div>
                   ))}
                 </div>
               </CardContent>
             </Card>
 
-            <Card className="bg-card shadow-2xl rounded-2xl border-2 border-accent/30 hover:shadow-3xl transition-all duration-300 hover:-translate-y-2 transform">
-              <CardHeader className="bg-green-light rounded-t-2xl">
-                <CardTitle className="flex items-center text-accent text-xl">
-                  <Star className="w-6 h-6 mr-3" />
+            <Card className="bg-card shadow-lg border-0 rounded-2xl hover:shadow-xl transition-shadow duration-300">
+              <CardHeader className="pb-4">
+                <CardTitle className="flex items-center text-foreground text-xl">
+                  <div className="w-10 h-10 bg-orange-subtle rounded-lg flex items-center justify-center mr-3">
+                    <Star className="w-5 h-5 text-modern-orange" />
+                  </div>
                   Tools & Platforms
                 </CardTitle>
               </CardHeader>
-              <CardContent className="p-6">
-                <div className="flex flex-wrap gap-3">
+              <CardContent>
+                <div className="space-y-3">
                   {skills.tools.map((tool) => (
-                    <Badge key={tool} className="bg-accent text-accent-foreground hover:bg-accent/90 px-3 py-1 text-sm font-semibold">
-                      {tool}
-                    </Badge>
+                    <div key={tool} className="flex items-center justify-between p-3 bg-orange-subtle rounded-lg">
+                      <span className="font-medium text-foreground">{tool}</span>
+                      <Badge variant="secondary" className="bg-secondary text-secondary-foreground">Advanced</Badge>
+                    </div>
                   ))}
                 </div>
               </CardContent>
@@ -205,63 +252,81 @@ const Index = () => {
       </section>
 
       {/* Experience Section */}
-      <section id="experience" className="py-20 px-6 bg-orange-light">
+      <section id="experience" className="py-20 px-6 bg-gray-subtle">
         <div className="container mx-auto max-w-4xl">
-          <h2 className="text-4xl font-bold text-secondary mb-16 text-center">Work Experience</h2>
-          <Card className="bg-card shadow-2xl rounded-2xl border-2 border-secondary/20 hover:shadow-3xl transition-shadow duration-300">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-foreground mb-4">Work Experience</h2>
+            <p className="text-lg text-muted-foreground">My professional journey and achievements</p>
+          </div>
+          <Card className="bg-card shadow-lg border-0 rounded-2xl">
             <CardHeader>
-              <CardTitle className="flex items-center text-foreground text-xl">
-                <Briefcase className="w-6 h-6 mr-3 text-secondary" />
-                Core Member – Technical Wing, English Literary Club
-              </CardTitle>
-              <CardDescription className="flex items-center text-muted-foreground text-lg">
-                <Calendar className="w-5 h-5 mr-2 text-secondary" />
-                Dec 2023 – Present, Bhopal
-              </CardDescription>
+              <div className="flex items-start space-x-4">
+                <div className="w-12 h-12 bg-primary rounded-xl flex items-center justify-center">
+                  <Briefcase className="w-6 h-6 text-primary-foreground" />
+                </div>
+                <div className="flex-1">
+                  <CardTitle className="text-foreground text-xl mb-2">
+                    Core Member – Technical Wing, English Literary Club
+                  </CardTitle>
+                  <CardDescription className="flex items-center text-muted-foreground text-base">
+                    <Calendar className="w-4 h-4 mr-2" />
+                    Dec 2023 – Present, Bhopal
+                  </CardDescription>
+                </div>
+              </div>
             </CardHeader>
-            <CardContent className="p-8">
-              <ul className="space-y-3 text-foreground text-lg">
-                <li className="flex items-start">
-                  <span className="w-2 h-2 bg-secondary rounded-full mt-3 mr-3 flex-shrink-0"></span>
-                  Created and distributed online forms, handled event data
-                </li>
-                <li className="flex items-start">
-                  <span className="w-2 h-2 bg-secondary rounded-full mt-3 mr-3 flex-shrink-0"></span>
-                  Organized key events: Enchantopia 2.0, Alfaaz '24, The Pensieve of Nostalgia
-                </li>
-                <li className="flex items-start">
-                  <span className="w-2 h-2 bg-secondary rounded-full mt-3 mr-3 flex-shrink-0"></span>
-                  Designed and managed digital magazine "ELA Gazette"
-                </li>
-              </ul>
+            <CardContent className="pt-0">
+              <div className="space-y-4 ml-16">
+                <div className="flex items-start space-x-3">
+                  <div className="w-2 h-2 bg-primary rounded-full mt-2"></div>
+                  <p className="text-foreground">Created and distributed online forms, handled event data</p>
+                </div>
+                <div className="flex items-start space-x-3">
+                  <div className="w-2 h-2 bg-primary rounded-full mt-2"></div>
+                  <p className="text-foreground">Organized key events: Enchantopia 2.0, Alfaaz '24, The Pensieve of Nostalgia</p>
+                </div>
+                <div className="flex items-start space-x-3">
+                  <div className="w-2 h-2 bg-primary rounded-full mt-2"></div>
+                  <p className="text-foreground">Designed and managed digital magazine "ELA Gazette"</p>
+                </div>
+              </div>
             </CardContent>
           </Card>
         </div>
       </section>
 
       {/* Education Section */}
-      <section id="education" className="py-20 px-6 bg-green-light">
+      <section id="education" className="py-20 px-6 bg-background">
         <div className="container mx-auto max-w-4xl">
-          <h2 className="text-4xl font-bold text-accent mb-16 text-center">Education</h2>
-          <Card className="bg-card shadow-2xl rounded-2xl border-2 border-accent/20 hover:shadow-3xl transition-shadow duration-300">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-foreground mb-4">Education</h2>
+            <p className="text-lg text-muted-foreground">Academic background and achievements</p>
+          </div>
+          <Card className="bg-card shadow-lg border-0 rounded-2xl">
             <CardHeader>
-              <CardTitle className="flex items-center text-foreground text-xl">
-                <GraduationCap className="w-6 h-6 mr-3 text-accent" />
-                B.Tech in Cloud Computing and Automation
-              </CardTitle>
-              <CardDescription className="text-lg text-muted-foreground">
-                Vellore Institute of Technology (VIT), Bhopal — 2022–2026
-              </CardDescription>
-            </CardHeader>
-            <CardContent className="p-8">
-              <div className="space-y-4">
-                <div className="flex items-center bg-secondary/10 p-4 rounded-xl">
-                  <Award className="w-6 h-6 mr-3 text-secondary" />
-                  <span className="text-lg font-semibold text-foreground">🏅 Gold Medal – Aarambh 2022 Football Tournament</span>
+              <div className="flex items-start space-x-4">
+                <div className="w-12 h-12 bg-accent rounded-xl flex items-center justify-center">
+                  <GraduationCap className="w-6 h-6 text-accent-foreground" />
                 </div>
-                <div className="flex items-center bg-muted p-4 rounded-xl">
-                  <Award className="w-6 h-6 mr-3 text-accent" />
-                  <span className="text-lg font-semibold text-foreground">🥈 Silver Medal – Aadhav AdVITya 2023 Football Tournament</span>
+                <div className="flex-1">
+                  <CardTitle className="text-foreground text-xl mb-2">
+                    B.Tech in Cloud Computing and Automation
+                  </CardTitle>
+                  <CardDescription className="text-muted-foreground text-base">
+                    Vellore Institute of Technology (VIT), Bhopal — 2022–2026
+                  </CardDescription>
+                </div>
+              </div>
+            </CardHeader>
+            <CardContent className="pt-0">
+              <div className="space-y-4 ml-16">
+                <div className="flex items-center space-x-3 p-4 bg-orange-subtle rounded-xl">
+                  <Award className="w-5 h-5 text-modern-orange" />
+                  <span className="font-semibold text-foreground">🏅 Gold Medal – Aarambh 2022 Football Tournament</span>
+                </div>
+                <div className="flex items-center space-x-3 p-4 bg-blue-subtle rounded-xl">
+                  <Award className="w-5 h-5 text-primary" />
+                  <span className="font-semibold text-foreground">🥈 Silver Medal – Aadhav AdVITya 2023 Football Tournament</span>
                 </div>
               </div>
             </CardContent>
@@ -270,38 +335,46 @@ const Index = () => {
       </section>
 
       {/* Projects Section */}
-      <section id="projects" className="py-20 px-6 bg-background">
+      <section id="projects" className="py-20 px-6 bg-gray-subtle">
         <div className="container mx-auto max-w-6xl">
-          <h2 className="text-4xl font-bold text-primary mb-16 text-center">Featured Projects</h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-foreground mb-4">Featured Projects</h2>
+            <p className="text-lg text-muted-foreground">Some of my notable work and contributions</p>
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {projects.map((project, index) => (
-              <Card key={index} className="bg-card shadow-2xl rounded-2xl border-2 border-primary/20 hover:shadow-3xl transition-all duration-300 hover:-translate-y-3 transform">
-                <CardHeader className="bg-gradient-primary text-primary-foreground rounded-t-2xl">
-                  <CardTitle className="text-xl">{project.title}</CardTitle>
-                  <CardDescription className="text-primary-foreground/90 font-medium">
-                    {project.type}
+              <Card key={index} className="bg-card shadow-lg border-0 rounded-2xl hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+                <CardHeader>
+                  <div className="flex items-center justify-between mb-2">
+                    <Badge variant="outline" className="text-xs">{project.type}</Badge>
+                    <ExternalLink className="w-4 h-4 text-muted-foreground" />
+                  </div>
+                  <CardTitle className="text-foreground text-lg">{project.title}</CardTitle>
+                  <CardDescription className="text-muted-foreground line-clamp-2">
+                    {project.description}
                   </CardDescription>
                 </CardHeader>
-                <CardContent className="p-6">
-                  <p className="text-foreground mb-6 text-lg">{project.description}</p>
-                  <div className="flex flex-wrap gap-2 mb-6">
-                    {project.tech.map((tech) => (
-                      <Badge key={tech} variant="outline" className="text-sm border-primary text-primary">
-                        {tech}
-                      </Badge>
-                    ))}
+                <CardContent>
+                  <div className="space-y-4">
+                    <div className="flex flex-wrap gap-2">
+                      {project.tech.map((tech) => (
+                        <Badge key={tech} variant="secondary" className="text-xs bg-muted text-muted-foreground">
+                          {tech}
+                        </Badge>
+                      ))}
+                    </div>
+                    <Button 
+                      variant="outline" 
+                      size="sm" 
+                      asChild
+                      className="w-full border-primary text-primary hover:bg-primary hover:text-primary-foreground"
+                    >
+                      <a href={project.github} target="_blank" rel="noopener noreferrer">
+                        <Github className="w-4 h-4 mr-2" />
+                        View Project
+                      </a>
+                    </Button>
                   </div>
-                  <Button 
-                    variant="outline" 
-                    size="sm" 
-                    asChild
-                    className="w-full border-2 border-accent text-accent hover:bg-accent hover:text-accent-foreground font-semibold transition-all duration-200 hover:scale-105 transform"
-                  >
-                    <a href={project.github} target="_blank" rel="noopener noreferrer">
-                      <ExternalLink className="w-4 h-4 mr-2" />
-                      View on GitHub
-                    </a>
-                  </Button>
                 </CardContent>
               </Card>
             ))}
@@ -309,20 +382,28 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Certifications Section */}
-      <section className="py-20 px-6 bg-blue-light">
+      {/* Certifications */}
+      <section className="py-20 px-6 bg-background">
         <div className="container mx-auto max-w-4xl">
-          <h2 className="text-4xl font-bold text-primary mb-16 text-center">Certifications</h2>
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-foreground mb-4">Certifications</h2>
+            <p className="text-lg text-muted-foreground">Professional development and learning</p>
+          </div>
           <div className="space-y-6">
             {certifications.map((cert, index) => (
-              <Card key={index} className="bg-card shadow-xl rounded-2xl border-2 border-primary/20 hover:shadow-2xl transition-all duration-300 hover:scale-[1.02] transform">
-                <CardContent className="p-8">
+              <Card key={index} className="bg-card shadow-lg border-0 rounded-2xl hover:shadow-xl transition-shadow duration-300">
+                <CardContent className="p-6">
                   <div className="flex items-center justify-between">
-                    <div>
-                      <h3 className="font-bold text-xl text-foreground mb-2">{cert.title}</h3>
-                      <p className="text-lg text-muted-foreground font-medium">{cert.issuer}</p>
+                    <div className="flex items-center space-x-4">
+                      <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
+                        <Award className="w-5 h-5 text-primary-foreground" />
+                      </div>
+                      <div>
+                        <h3 className="font-semibold text-foreground text-lg">{cert.title}</h3>
+                        <p className="text-muted-foreground">{cert.issuer}</p>
+                      </div>
                     </div>
-                    <Badge className="bg-accent text-accent-foreground px-4 py-2 text-sm font-semibold">
+                    <Badge className="bg-accent text-accent-foreground px-3 py-1">
                       {cert.date}
                     </Badge>
                   </div>
@@ -333,29 +414,39 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Interests Section */}
-      <section className="py-20 px-6 bg-background">
+      {/* Interests */}
+      <section className="py-20 px-6 bg-gray-subtle">
         <div className="container mx-auto max-w-4xl">
-          <h2 className="text-4xl font-bold text-primary mb-16 text-center">Interests</h2>
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-foreground mb-4">Interests</h2>
+            <p className="text-lg text-muted-foreground">What I'm passionate about beyond coding</p>
+          </div>
           <div className="grid md:grid-cols-3 gap-8">
-            <Card className="bg-card shadow-2xl rounded-2xl border-2 border-primary/30 text-center hover:shadow-3xl transition-all duration-300 hover:-translate-y-2 transform">
+            <Card className="bg-card shadow-lg border-0 rounded-2xl text-center hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
               <CardContent className="p-8">
-                <div className="text-6xl mb-6">💻</div>
-                <h3 className="font-bold text-xl text-primary mb-2">Keen Coder</h3>
+                <div className="w-16 h-16 bg-blue-subtle rounded-2xl flex items-center justify-center mx-auto mb-4">
+                  <span className="text-3xl">💻</span>
+                </div>
+                <h3 className="font-bold text-lg text-primary mb-2">Keen Coder</h3>
+                <p className="text-muted-foreground">Passionate about clean code and innovative solutions</p>
               </CardContent>
             </Card>
-            <Card className="bg-card shadow-2xl rounded-2xl border-2 border-secondary/30 text-center hover:shadow-3xl transition-all duration-300 hover:-translate-y-2 transform">
+            <Card className="bg-card shadow-lg border-0 rounded-2xl text-center hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
               <CardContent className="p-8">
-                <div className="text-6xl mb-6">⚽</div>
-                <h3 className="font-bold text-xl text-secondary mb-2">Football Player</h3>
-                <p className="text-lg text-muted-foreground font-medium">Defensive Midfielder</p>
+                <div className="w-16 h-16 bg-green-subtle rounded-2xl flex items-center justify-center mx-auto mb-4">
+                  <span className="text-3xl">⚽</span>
+                </div>
+                <h3 className="font-bold text-lg text-modern-green mb-2">Football Player</h3>
+                <p className="text-muted-foreground">Defensive Midfielder with team leadership skills</p>
               </CardContent>
             </Card>
-            <Card className="bg-card shadow-2xl rounded-2xl border-2 border-accent/30 text-center hover:shadow-3xl transition-all duration-300 hover:-translate-y-2 transform">
+            <Card className="bg-card shadow-lg border-0 rounded-2xl text-center hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
               <CardContent className="p-8">
-                <div className="text-6xl mb-6">📚</div>
-                <h3 className="font-bold text-xl text-accent mb-2">Lifelong Learner</h3>
-                <p className="text-lg text-muted-foreground font-medium">Facts & Events</p>
+                <div className="w-16 h-16 bg-orange-subtle rounded-2xl flex items-center justify-center mx-auto mb-4">
+                  <span className="text-3xl">📚</span>
+                </div>
+                <h3 className="font-bold text-lg text-modern-orange mb-2">Lifelong Learner</h3>
+                <p className="text-muted-foreground">Always curious about facts and new events</p>
               </CardContent>
             </Card>
           </div>
@@ -363,18 +454,21 @@ const Index = () => {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-20 px-6 gradient-secondary">
+      <section id="contact" className="py-20 px-6 bg-background">
         <div className="container mx-auto max-w-4xl">
-          <h2 className="text-4xl font-bold text-primary-foreground mb-16 text-center">Get In Touch</h2>
-          <Card className="bg-card/95 backdrop-blur-sm shadow-2xl rounded-2xl border-2 border-primary-foreground/20">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-foreground mb-4">Get In Touch</h2>
+            <p className="text-lg text-muted-foreground">Ready to start a conversation? Let's connect!</p>
+          </div>
+          <Card className="bg-card shadow-lg border-0 rounded-2xl">
             <CardContent className="p-10 text-center">
-              <p className="text-xl text-foreground mb-10 font-medium">
+              <p className="text-lg text-foreground mb-8">
                 I'm always open to discussing new opportunities and exciting projects. Let's connect!
               </p>
-              <div className="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-8">
+              <div className="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-6">
                 <Button 
                   asChild
-                  className="bg-accent hover:bg-accent/90 text-accent-foreground px-8 py-4 rounded-full shadow-xl transition-all duration-200 hover:shadow-2xl hover:scale-105 transform font-semibold text-lg"
+                  className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-3 h-12"
                 >
                   <a href="mailto:ankushsil041016@gmail.com">
                     <Mail className="w-5 h-5 mr-3" />
@@ -384,7 +478,7 @@ const Index = () => {
                 <Button 
                   variant="outline" 
                   asChild
-                  className="border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground px-8 py-4 rounded-full font-semibold text-lg hover:scale-105 transform shadow-xl"
+                  className="border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground px-8 py-3 h-12"
                 >
                   <a href="https://www.linkedin.com/in/ankush-sil-355944251" target="_blank" rel="noopener noreferrer">
                     <Linkedin className="w-5 h-5 mr-3" />
@@ -398,10 +492,10 @@ const Index = () => {
       </section>
 
       {/* Footer */}
-      <footer className="py-8 px-6 border-t-2 border-primary bg-card">
+      <footer className="py-8 px-6 border-t border-border bg-card">
         <div className="container mx-auto max-w-4xl text-center">
-          <p className="text-foreground text-lg font-medium">
-            © 2024 Ankush Sil. Built with passion and dedication.
+          <p className="text-muted-foreground">
+            © 2024 Ankush Sil. Designed with passion and built with modern technologies.
           </p>
         </div>
       </footer>
