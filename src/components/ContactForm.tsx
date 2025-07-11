@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { Send, Mail, User, MessageSquare, CheckCircle, AlertCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -36,12 +37,13 @@ const ContactForm = () => {
       // Initialize EmailJS with your public key
       emailjs.init('3VPfWvZ6_5an-anZE');
       
-      // Prepare template parameters matching EmailJS format
+      // Prepare template parameters matching your EmailJS template
       const templateParams = {
         name: data.name,        // {{name}} in template
         email: data.email,      // {{email}} in template (for Reply To)
         subject: data.subject,
         message: data.message,
+        time: new Date().toLocaleString(), // {{time}} in template
       };
 
       // Send email using EmailJS
