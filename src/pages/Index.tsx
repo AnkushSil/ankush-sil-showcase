@@ -146,7 +146,7 @@ const Index = () => {
                 <div className="w-64 h-64 rounded-2xl overflow-hidden shadow-2xl gradient-modern p-1">
                   <div className="w-full h-full rounded-xl overflow-hidden">
                     <img 
-                      src="https://i.postimg.cc/tnpQz2Fk/profile-photo.jpg" 
+                      src="https://postimg.cc/8Jp61JR4" 
                       alt="Ankush Sil" 
                       className="w-full h-full object-cover"
                     />
