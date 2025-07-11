@@ -183,66 +183,72 @@ const Index = () => {
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-foreground mb-4">Skills & Expertise</h2>
-            <p className="text-lg text-muted-foreground">Technologies and tools I work with</p>
+            <p className="text-lg text-muted-foreground">Technologies and tools that fuel my passion</p>
           </div>
           <div className="grid md:grid-cols-3 gap-8">
-            <Card className="bg-card shadow-lg border-0 rounded-2xl hover:shadow-xl transition-shadow duration-300">
+            <Card className="bg-card shadow-lg border-0 rounded-2xl hover:shadow-xl transition-all duration-300 hover:-translate-y-2 group">
               <CardHeader className="pb-4">
                 <CardTitle className="flex items-center text-foreground text-xl">
-                  <div className="w-10 h-10 bg-blue-vibrant rounded-lg flex items-center justify-center mr-3">
+                  <div className="w-10 h-10 bg-blue-vibrant rounded-lg flex items-center justify-center mr-3 group-hover:scale-110 transition-transform duration-300">
                     <Code className="w-5 h-5 text-primary" />
                   </div>
-                  Technical Skills
+                  Programming Languages
                 </CardTitle>
+                <CardDescription className="text-muted-foreground">
+                  Building robust solutions with modern languages
+                </CardDescription>
               </CardHeader>
               <CardContent>
-                <div className="space-y-3">
+                <div className="flex flex-wrap gap-2">
                   {skills.technical.map((skill) => (
-                    <div key={skill} className="flex items-center justify-between p-3 bg-blue-vibrant rounded-lg">
-                      <span className="font-medium text-foreground">{skill}</span>
-                      <Badge variant="secondary" className="bg-primary text-primary-foreground">Pro</Badge>
+                    <div key={skill} className="px-4 py-2 bg-blue-vibrant rounded-full text-foreground font-medium hover:bg-primary hover:text-primary-foreground transition-colors duration-200 cursor-default">
+                      {skill}
                     </div>
                   ))}
                 </div>
               </CardContent>
             </Card>
 
-            <Card className="bg-card shadow-lg border-0 rounded-2xl hover:shadow-xl transition-shadow duration-300">
+            <Card className="bg-card shadow-lg border-0 rounded-2xl hover:shadow-xl transition-all duration-300 hover:-translate-y-2 group">
               <CardHeader className="pb-4">
                 <CardTitle className="flex items-center text-foreground text-xl">
-                  <div className="w-10 h-10 bg-green-vibrant rounded-lg flex items-center justify-center mr-3">
+                  <div className="w-10 h-10 bg-green-vibrant rounded-lg flex items-center justify-center mr-3 group-hover:scale-110 transition-transform duration-300">
                     <Users className="w-5 h-5 text-modern-green" />
                   </div>
-                  Soft Skills
+                  Core Competencies
                 </CardTitle>
+                <CardDescription className="text-muted-foreground">
+                  Essential skills for collaborative success
+                </CardDescription>
               </CardHeader>
               <CardContent>
-                <div className="space-y-3">
+                <div className="flex flex-wrap gap-2">
                   {skills.soft.map((skill) => (
-                    <div key={skill} className="flex items-center justify-between p-3 bg-green-vibrant rounded-lg">
-                      <span className="font-medium text-foreground">{skill}</span>
-                      <Badge variant="secondary" className="bg-accent text-accent-foreground">Expert</Badge>
+                    <div key={skill} className="px-4 py-2 bg-green-vibrant rounded-full text-foreground font-medium hover:bg-modern-green hover:text-white transition-colors duration-200 cursor-default">
+                      {skill}
                     </div>
                   ))}
                 </div>
               </CardContent>
             </Card>
 
-            <Card className="bg-card shadow-lg border-0 rounded-2xl hover:shadow-xl transition-shadow duration-300">
+            <Card className="bg-card shadow-lg border-0 rounded-2xl hover:shadow-xl transition-all duration-300 hover:-translate-y-2 group">
               <CardHeader className="pb-4">
                 <CardTitle className="flex items-center text-foreground text-xl">
-                  <div className="w-10 h-10 bg-orange-vibrant rounded-lg flex items-center justify-center mr-3">
+                  <div className="w-10 h-10 bg-orange-vibrant rounded-lg flex items-center justify-center mr-3 group-hover:scale-110 transition-transform duration-300">
                     <Star className="w-5 h-5 text-modern-orange" />
                   </div>
-                  Tools & Platforms
+                  Development Tools
                 </CardTitle>
+                <CardDescription className="text-muted-foreground">
+                  Powerful tools for efficient development
+                </CardDescription>
               </CardHeader>
               <CardContent>
-                <div className="space-y-3">
+                <div className="flex flex-wrap gap-2">
                   {skills.tools.map((tool) => (
-                    <div key={tool} className="flex items-center justify-between p-3 bg-orange-vibrant rounded-lg">
-                      <span className="font-medium text-foreground">{tool}</span>
-                      <Badge variant="secondary" className="bg-secondary text-secondary-foreground">Advanced</Badge>
+                    <div key={tool} className="px-4 py-2 bg-orange-vibrant rounded-full text-foreground font-medium hover:bg-modern-orange hover:text-white transition-colors duration-200 cursor-default">
+                      {tool}
                     </div>
                   ))}
                 </div>
