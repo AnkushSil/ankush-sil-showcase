@@ -1,4 +1,5 @@
 
+
 import React, { useState } from 'react';
 import { Send, Mail, User, MessageSquare, CheckCircle, AlertCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -49,7 +50,7 @@ const ContactForm = () => {
       // Send email using EmailJS
       await emailjs.send(
         'service_bh1w6ds',
-        'template_1fas7qf',
+        'template_r67znrc',
         templateParams
       );
 
@@ -203,3 +204,4 @@ const ContactForm = () => {
 };
 
 export default ContactForm;
+
