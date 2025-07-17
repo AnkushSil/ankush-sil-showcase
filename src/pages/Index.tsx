@@ -147,10 +147,12 @@ const Index = () => {
                     <img 
                       src="https://i.postimg.cc/zLcXh5GZ/profile-image.jpg" 
                       alt="Ankush Sil" 
-                      className="w-full h-full object-cover"
+                      className="w-full h-full object-cover object-center"
+                      style={{ imageRendering: 'crisp-edges' }}
+                      loading="eager"
                       onError={(e) => {
                         const target = e.target as HTMLImageElement;
-                        target.src = "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face";
+                        target.src = "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=800&h=800&fit=crop&crop=face&q=80";
                       }}
                     />
                   </div>
