@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Mail, MapPin, Github, Linkedin, ExternalLink, Calendar, Award, Users, Code, Briefcase, GraduationCap, Star, Download, Phone } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -146,9 +145,13 @@ const Index = () => {
                 <div className="w-64 h-64 rounded-2xl overflow-hidden shadow-2xl gradient-modern p-1">
                   <div className="w-full h-full rounded-xl overflow-hidden">
                     <img 
-                      src="https://postimg.cc/zLcXh5GZ" 
+                      src="https://i.postimg.cc/zLcXh5GZ/profile-image.jpg" 
                       alt="Ankush Sil" 
                       className="w-full h-full object-cover"
+                      onError={(e) => {
+                        const target = e.target as HTMLImageElement;
+                        target.src = "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face";
+                      }}
                     />
                   </div>
                 </div>
