@@ -298,40 +298,98 @@ const Index = () => {
             <h2 className="text-4xl font-bold text-foreground mb-4">Work Experience</h2>
             <p className="text-lg text-muted-foreground">My professional journey and achievements</p>
           </div>
-          <Card className="bg-card shadow-lg border-0 rounded-2xl">
-            <CardHeader>
-              <div className="flex items-start space-x-4">
-                <div className="w-12 h-12 bg-primary rounded-xl flex items-center justify-center">
-                  <Briefcase className="w-6 h-6 text-primary-foreground" />
+          <div className="space-y-6">
+            <Card className="bg-card shadow-lg border-0 rounded-2xl">
+              <CardHeader>
+                <div className="flex items-start space-x-4">
+                  <div className="w-12 h-12 bg-primary rounded-xl flex items-center justify-center shrink-0">
+                    <Briefcase className="w-6 h-6 text-primary-foreground" />
+                  </div>
+                  <div className="flex-1">
+                    <CardTitle className="text-foreground text-xl mb-2">
+                      AI and Automation Intern – MIRAI School of Technology
+                    </CardTitle>
+                    <CardDescription className="flex flex-wrap items-center gap-x-4 gap-y-1 text-muted-foreground text-base">
+                      <span className="flex items-center">
+                        <Calendar className="w-4 h-4 mr-2" />
+                        July 2025 – August 2025
+                      </span>
+                      <span className="flex items-center">
+                        <MapPin className="w-4 h-4 mr-2" />
+                        Remote
+                      </span>
+                    </CardDescription>
+                    <div className="inline-flex items-center gap-2 mt-3 px-3 py-1 rounded-full bg-purple-vibrant text-modern-purple text-xs font-semibold w-fit">
+                      <Cpu className="w-3 h-3" />
+                      Agentic AI & Workflow Automation
+                    </div>
+                  </div>
                 </div>
-                <div className="flex-1">
-                  <CardTitle className="text-foreground text-xl mb-2">
-                    Core Member – Technical Wing, English Literary Club
-                  </CardTitle>
-                  <CardDescription className="flex items-center text-muted-foreground text-base">
-                    <Calendar className="w-4 h-4 mr-2" />
-                    Dec 2023 – Present, Bhopal
-                  </CardDescription>
+              </CardHeader>
+              <CardContent className="pt-0">
+                <div className="space-y-4 ml-16">
+                  <div className="flex items-start space-x-3">
+                    <div className="w-2 h-2 bg-primary rounded-full mt-2 shrink-0"></div>
+                    <p className="text-foreground">Engineered a 'Zero-Touch' platform (AI Venture Planner) that automated the entire pipeline from lead capture to email delivery, reducing manual intervention by 100%</p>
+                  </div>
+                  <div className="flex items-start space-x-3">
+                    <div className="w-2 h-2 bg-primary rounded-full mt-2 shrink-0"></div>
+                    <p className="text-foreground">Designed Agentic Workflows using n8n to seamlessly orchestrate data exchange between Lovable AI and Google Gemini, cutting workflow execution time by 40%</p>
+                  </div>
+                  <div className="flex items-start space-x-3">
+                    <div className="w-2 h-2 bg-primary rounded-full mt-2 shrink-0"></div>
+                    <p className="text-foreground">Optimized Large Language Model (LLM) outputs using the RTFC framework to generate hyper-personalized user itineraries, achieving 95% output relevance</p>
+                  </div>
+                  <div className="flex items-start space-x-3">
+                    <div className="w-2 h-2 bg-primary rounded-full mt-2 shrink-0"></div>
+                    <p className="text-foreground">Integrated Email.js and Zapier for fully automated delivery, ensuring a sub-2 second latency for the end-user experience</p>
+                  </div>
+                  <div className="flex flex-wrap gap-2 pt-2">
+                    {['n8n', 'Prompt Engineering (RTFC)', 'Google Gemini API', 'Workflow Automation', 'Lovable AI', 'Zapier'].map((tech) => (
+                      <Badge key={tech} variant="secondary" className="text-xs bg-muted text-muted-foreground">
+                        {tech}
+                      </Badge>
+                    ))}
+                  </div>
                 </div>
-              </div>
-            </CardHeader>
-            <CardContent className="pt-0">
-              <div className="space-y-4 ml-16">
-                <div className="flex items-start space-x-3">
-                  <div className="w-2 h-2 bg-primary rounded-full mt-2"></div>
-                  <p className="text-foreground">Created and distributed online forms, handled event data</p>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-card shadow-lg border-0 rounded-2xl">
+              <CardHeader>
+                <div className="flex items-start space-x-4">
+                  <div className="w-12 h-12 bg-primary rounded-xl flex items-center justify-center shrink-0">
+                    <Briefcase className="w-6 h-6 text-primary-foreground" />
+                  </div>
+                  <div className="flex-1">
+                    <CardTitle className="text-foreground text-xl mb-2">
+                      Core Member – Technical Wing, English Literary Club
+                    </CardTitle>
+                    <CardDescription className="flex items-center text-muted-foreground text-base">
+                      <Calendar className="w-4 h-4 mr-2" />
+                      Dec 2023 – Present, Bhopal
+                    </CardDescription>
+                  </div>
                 </div>
-                <div className="flex items-start space-x-3">
-                  <div className="w-2 h-2 bg-primary rounded-full mt-2"></div>
-                  <p className="text-foreground">Organized key events: Enchantopia 2.0, Alfaaz '24, The Pensieve of Nostalgia</p>
+              </CardHeader>
+              <CardContent className="pt-0">
+                <div className="space-y-4 ml-16">
+                  <div className="flex items-start space-x-3">
+                    <div className="w-2 h-2 bg-primary rounded-full mt-2"></div>
+                    <p className="text-foreground">Created and distributed online forms, handled event data</p>
+                  </div>
+                  <div className="flex items-start space-x-3">
+                    <div className="w-2 h-2 bg-primary rounded-full mt-2"></div>
+                    <p className="text-foreground">Organized key events: Enchantopia 2.0, Alfaaz '24, The Pensieve of Nostalgia</p>
+                  </div>
+                  <div className="flex items-start space-x-3">
+                    <div className="w-2 h-2 bg-primary rounded-full mt-2"></div>
+                    <p className="text-foreground">Designed and managed digital magazine "ELA Gazette"</p>
+                  </div>
                 </div>
-                <div className="flex items-start space-x-3">
-                  <div className="w-2 h-2 bg-primary rounded-full mt-2"></div>
-                  <p className="text-foreground">Designed and managed digital magazine "ELA Gazette"</p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
+              </CardContent>
+            </Card>
+          </div>
         </div>
       </section>
 
