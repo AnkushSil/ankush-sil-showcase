@@ -406,17 +406,32 @@ const Index = () => {
                         </Badge>
                       ))}
                     </div>
-                    <Button 
-                      variant="outline" 
-                      size="sm" 
-                      asChild
-                      className="w-full border-primary text-primary hover:bg-primary hover:text-primary-foreground"
-                    >
-                      <a href={project.github} target="_blank" rel="noopener noreferrer">
-                        <Github className="w-4 h-4 mr-2" />
-                        View Project
-                      </a>
-                    </Button>
+                    <div className={`grid ${(project as any).githubBackend ? 'grid-cols-2' : 'grid-cols-1'} gap-2`}>
+                      <Button 
+                        variant="outline" 
+                        size="sm" 
+                        asChild
+                        className="border-primary text-primary hover:bg-primary hover:text-primary-foreground"
+                      >
+                        <a href={project.github} target="_blank" rel="noopener noreferrer">
+                          <Github className="w-4 h-4 mr-2" />
+                          {(project as any).githubBackend ? 'Frontend' : 'View Project'}
+                        </a>
+                      </Button>
+                      {(project as any).githubBackend && (
+                        <Button 
+                          variant="outline" 
+                          size="sm" 
+                          asChild
+                          className="border-primary text-primary hover:bg-primary hover:text-primary-foreground"
+                        >
+                          <a href={(project as any).githubBackend} target="_blank" rel="noopener noreferrer">
+                            <Github className="w-4 h-4 mr-2" />
+                            Backend
+                          </a>
+                        </Button>
+                      )}
+                    </div>
                   </div>
                 </CardContent>
               </Card>
