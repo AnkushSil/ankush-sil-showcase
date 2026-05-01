@@ -185,6 +185,34 @@ const Index = () => {
             <h2 className="text-4xl font-bold text-foreground mb-4">Skills & Expertise</h2>
             <p className="text-lg text-muted-foreground">Technologies and tools that fuel my passion</p>
           </div>
+          {/* Highlighted Specialties */}
+          <Card className="bg-card shadow-lg border-0 rounded-2xl mb-8 overflow-hidden">
+            <CardContent className="p-6 md:p-8">
+              <div className="flex flex-col md:flex-row md:items-center gap-6">
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 bg-purple-vibrant rounded-xl flex items-center justify-center shrink-0">
+                    <Cpu className="w-6 h-6 text-modern-purple" />
+                  </div>
+                  <div>
+                    <h3 className="text-foreground text-lg font-bold">Core Specialties</h3>
+                    <p className="text-muted-foreground text-sm">Where I sharpen my craft daily</p>
+                  </div>
+                </div>
+                <div className="flex flex-wrap gap-3 md:ml-auto">
+                  {skills.specialties.map((item) => (
+                    <div
+                      key={item}
+                      className="flex items-center gap-2 px-4 py-2 rounded-full bg-purple-vibrant text-foreground font-semibold border border-modern-purple/30 hover:bg-modern-purple hover:text-white transition-colors duration-200"
+                    >
+                      <Trophy className="w-4 h-4" />
+                      {item}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
           <div className="grid md:grid-cols-3 gap-8">
             <Card className="bg-card shadow-lg border-0 rounded-2xl hover:shadow-xl transition-all duration-300 hover:-translate-y-2 group">
               <CardHeader className="pb-4">
