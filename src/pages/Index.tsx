@@ -20,7 +20,8 @@ const Index = () => {
       role: 'Backend Infrastructure Engineer',
       description: 'A real-time developer platform. Engineered the backend architecture using Node.js and Express to build scalable REST APIs for authentication and storage. Implemented WebSocket events via Socket.io to manage concurrent user sessions, achieving sub-100ms sync latency. Secured routes using Role-Based Access Control (RBAC) with JWT tokenization and bcrypt hashing. Orchestrated the integration of external Code Execution APIs to process code submissions and stream real-time output directly to the frontend.',
       tech: ['Node.js', 'Express', 'Socket.io', 'MongoDB', 'JWT'],
-      github: 'https://github.com/AnkushSil',
+      github: 'https://github.com/AnkushSil/CodeCollab-frontend',
+      githubBackend: 'https://github.com/AnkushSil/CodeCollab-backend',
       type: 'Group Project'
     },
     {
@@ -28,7 +29,8 @@ const Index = () => {
       role: 'Full Stack / AI Engineer',
       description: 'A Conversational AI FinTech Loan Assistant. Architected a mobile-first underwriting system featuring an AI-driven chat assistant for real-time financial queries and personalized loan offers. Engineered a robust REST API with Node.js and natively integrated the Google Gemini API for fast context parsing, reducing query latency by 30%. Implemented secure OTP authentication and deployed the entire microservices architecture on Render for high availability.',
       tech: ['Node.js', 'Google Gemini API', 'MongoDB', 'Render'],
-      github: 'https://github.com/AnkushSil',
+      github: 'https://github.com/AnkushSil/SaralLoan-frontend',
+      githubBackend: 'https://github.com/AnkushSil/SaralLoan-backend',
       type: 'Solo Project'
     },
     {
@@ -132,10 +134,13 @@ const Index = () => {
                 </Button>
                 <Button 
                   variant="outline"
+                  asChild
                   className="border-2 border-border hover:bg-muted px-8 py-3 h-12"
                 >
-                  <Download className="w-5 h-5 mr-2" />
-                  Resume
+                  <a href="/Ankush_SoftwareDeveloper_Resume_2026.pdf" download target="_blank" rel="noopener noreferrer">
+                    <Download className="w-5 h-5 mr-2" />
+                    Resume
+                  </a>
                 </Button>
               </div>
             </div>
@@ -404,17 +409,32 @@ const Index = () => {
                         </Badge>
                       ))}
                     </div>
-                    <Button 
-                      variant="outline" 
-                      size="sm" 
-                      asChild
-                      className="w-full border-primary text-primary hover:bg-primary hover:text-primary-foreground"
-                    >
-                      <a href={project.github} target="_blank" rel="noopener noreferrer">
-                        <Github className="w-4 h-4 mr-2" />
-                        View Project
-                      </a>
-                    </Button>
+                    <div className={`grid ${(project as any).githubBackend ? 'grid-cols-2' : 'grid-cols-1'} gap-2`}>
+                      <Button 
+                        variant="outline" 
+                        size="sm" 
+                        asChild
+                        className="border-primary text-primary hover:bg-primary hover:text-primary-foreground"
+                      >
+                        <a href={project.github} target="_blank" rel="noopener noreferrer">
+                          <Github className="w-4 h-4 mr-2" />
+                          {(project as any).githubBackend ? 'Frontend' : 'View Project'}
+                        </a>
+                      </Button>
+                      {(project as any).githubBackend && (
+                        <Button 
+                          variant="outline" 
+                          size="sm" 
+                          asChild
+                          className="border-primary text-primary hover:bg-primary hover:text-primary-foreground"
+                        >
+                          <a href={(project as any).githubBackend} target="_blank" rel="noopener noreferrer">
+                            <Github className="w-4 h-4 mr-2" />
+                            Backend
+                          </a>
+                        </Button>
+                      )}
+                    </div>
                   </div>
                 </CardContent>
               </Card>
