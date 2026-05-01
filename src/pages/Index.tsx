@@ -20,7 +20,8 @@ const Index = () => {
       role: 'Backend Infrastructure Engineer',
       description: 'A real-time developer platform. Engineered the backend architecture using Node.js and Express to build scalable REST APIs for authentication and storage. Implemented WebSocket events via Socket.io to manage concurrent user sessions, achieving sub-100ms sync latency. Secured routes using Role-Based Access Control (RBAC) with JWT tokenization and bcrypt hashing. Orchestrated the integration of external Code Execution APIs to process code submissions and stream real-time output directly to the frontend.',
       tech: ['Node.js', 'Express', 'Socket.io', 'MongoDB', 'JWT'],
-      github: 'https://github.com/AnkushSil',
+      github: 'https://github.com/AnkushSil/CodeCollab-frontend',
+      githubBackend: 'https://github.com/AnkushSil/CodeCollab-backend',
       type: 'Group Project'
     },
     {
@@ -28,7 +29,8 @@ const Index = () => {
       role: 'Full Stack / AI Engineer',
       description: 'A Conversational AI FinTech Loan Assistant. Architected a mobile-first underwriting system featuring an AI-driven chat assistant for real-time financial queries and personalized loan offers. Engineered a robust REST API with Node.js and natively integrated the Google Gemini API for fast context parsing, reducing query latency by 30%. Implemented secure OTP authentication and deployed the entire microservices architecture on Render for high availability.',
       tech: ['Node.js', 'Google Gemini API', 'MongoDB', 'Render'],
-      github: 'https://github.com/AnkushSil',
+      github: 'https://github.com/AnkushSil/SaralLoan-frontend',
+      githubBackend: 'https://github.com/AnkushSil/SaralLoan-backend',
       type: 'Solo Project'
     },
     {
