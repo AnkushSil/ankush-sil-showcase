@@ -1,35 +1,40 @@
 import React from 'react';
-import { Mail, MapPin, Github, Linkedin, ExternalLink, Calendar, Award, Users, Code, Briefcase, GraduationCap, Star, Download, Phone } from 'lucide-react';
+import { Mail, MapPin, Github, Linkedin, ExternalLink, Calendar, Award, Users, Code, Briefcase, GraduationCap, Star, Download, Phone, Cpu, Trophy } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import ContactForm from '@/components/ContactForm';
+import ankushProfile from '@/assets/ankush-profile.jpg';
 
 const Index = () => {
   const skills = {
-    technical: ['Java', 'Python', 'MySQL', 'CSS', 'HTML', 'Cloud Computing', 'AWS'],
+    technical: ['Java', 'Python', 'Node.js', 'MySQL', 'MongoDB', 'CSS', 'HTML', 'Cloud Computing', 'AWS'],
     soft: ['Problem Solving', 'Communication', 'Teamwork', 'Time Management'],
-    tools: ['AWS', 'OpenAI', 'MySQL Workbench', 'TinkerCAD', 'Blender', 'KiCad']
+    tools: ['AWS', 'OpenAI', 'Google Gemini API', 'MySQL Workbench', 'TinkerCAD', 'Blender', 'KiCad'],
+    specialties: ['Advanced DSA in Java', 'Competitive Programming']
   };
 
   const projects = [
     {
-      title: 'Hotel Management System',
-      description: 'Desktop app for hotel booking, billing, and room tracking',
-      tech: ['Python', 'Tkinter', 'MySQL'],
-      github: 'https://github.com/AnkushSil/Hotel_Management_System',
+      title: 'CodeCollab',
+      role: 'Backend Infrastructure Engineer',
+      description: 'A real-time developer platform. Engineered the backend architecture using Node.js and Express to build scalable REST APIs for authentication and storage. Implemented WebSocket events via Socket.io to manage concurrent user sessions, achieving sub-100ms sync latency. Secured routes using Role-Based Access Control (RBAC) with JWT tokenization and bcrypt hashing. Orchestrated the integration of external Code Execution APIs to process code submissions and stream real-time output directly to the frontend.',
+      tech: ['Node.js', 'Express', 'Socket.io', 'MongoDB', 'JWT'],
+      github: 'https://github.com/AnkushSil',
+      type: 'Group Project'
+    },
+    {
+      title: 'SaralLoan',
+      role: 'Full Stack / AI Engineer',
+      description: 'A Conversational AI FinTech Loan Assistant. Architected a mobile-first underwriting system featuring an AI-driven chat assistant for real-time financial queries and personalized loan offers. Engineered a robust REST API with Node.js and natively integrated the Google Gemini API for fast context parsing, reducing query latency by 30%. Implemented secure OTP authentication and deployed the entire microservices architecture on Render for high availability.',
+      tech: ['Node.js', 'Google Gemini API', 'MongoDB', 'Render'],
+      github: 'https://github.com/AnkushSil',
       type: 'Solo Project'
     },
     {
-      title: 'Genius – AI SaaS Multimedia Generator',
-      description: 'Multimedia AI platform: image, audio, video, and code generation',
-      tech: ['Next.js 13', 'React', 'Tailwind CSS', 'Prisma', 'Stripe'],
-      github: 'https://github.com/AnkushSil/Saas-AI-Platform',
-      type: 'Team of 5'
-    },
-    {
       title: 'Aqua Cloud Innovators – Water Harvesting',
-      description: 'Nanotech + biomimicry-based water harvesting concept',
+      role: '3D Filter Design & Research',
+      description: 'Nanotech + biomimicry-based water harvesting concept developed for SIH 2023. Contributed to 3D filter design and research using Blender and TinkerCAD, with FDM 3D printing for prototyping.',
       tech: ['Blender', 'TinkerCAD', 'FDM 3D Printing'],
       github: 'https://github.com/AnkushSil/AQUA-CLOUD-INNOVATORS-PROJECT-SIH_2023',
       type: 'Team of 6'
@@ -38,19 +43,14 @@ const Index = () => {
 
   const certifications = [
     {
-      title: 'Getting Started with Enterprise-grade AI',
-      issuer: 'IBM',
-      date: 'Jan–Feb 2024'
+      title: 'Applied Machine Learning in Python',
+      issuer: 'University of Michigan (Coursera)',
+      date: 'Dec 2025'
     },
     {
-      title: 'Journey to Cloud: Envisioning Your Solution',
-      issuer: 'IBM',
-      date: 'Jun–Jul 2023'
-    },
-    {
-      title: 'Getting Started with Enterprise Data Science',
-      issuer: 'IBM',
-      date: 'Jul 2023'
+      title: 'HTML, CSS, and JavaScript for Web Developers',
+      issuer: 'Johns Hopkins University (Coursera)',
+      date: 'Oct 2025'
     }
   ];
 
@@ -101,9 +101,9 @@ const Index = () => {
                 <h1 className="text-5xl lg:text-6xl font-bold text-foreground leading-tight">
                   Hi, I'm <span className="text-primary">Ankush Sil</span>
                 </h1>
-                <h2 className="text-2xl text-modern-purple font-semibold">Junior Software Developer</h2>
+                <h2 className="text-2xl text-modern-purple font-semibold">Software Developer & Cloud Engineer</h2>
                 <p className="text-xl text-muted-foreground leading-relaxed">
-                  Software Developer Intern passionate about cloud computing and AI innovation
+                  Passionate about building scalable systems, cloud infrastructure, and AI-driven innovation
                 </p>
               </div>
               
@@ -145,14 +145,10 @@ const Index = () => {
                 <div className="w-64 h-64 rounded-2xl overflow-hidden shadow-2xl gradient-modern p-1">
                   <div className="w-full h-full rounded-xl overflow-hidden">
                     <img 
-                      src="https://i.postimg.cc/zLcXh5GZ/profile-image.jpg?dl=1" 
+                      src={ankushProfile} 
                       alt="Ankush Sil" 
                       className="w-full h-full object-cover object-center"
                       loading="eager"
-                      onError={(e) => {
-                        const target = e.target as HTMLImageElement;
-                        target.src = "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=800&h=800&fit=crop&crop=face&q=90";
-                      }}
                     />
                   </div>
                 </div>
@@ -189,6 +185,34 @@ const Index = () => {
             <h2 className="text-4xl font-bold text-foreground mb-4">Skills & Expertise</h2>
             <p className="text-lg text-muted-foreground">Technologies and tools that fuel my passion</p>
           </div>
+          {/* Highlighted Specialties */}
+          <Card className="bg-card shadow-lg border-0 rounded-2xl mb-8 overflow-hidden">
+            <CardContent className="p-6 md:p-8">
+              <div className="flex flex-col md:flex-row md:items-center gap-6">
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 bg-purple-vibrant rounded-xl flex items-center justify-center shrink-0">
+                    <Cpu className="w-6 h-6 text-modern-purple" />
+                  </div>
+                  <div>
+                    <h3 className="text-foreground text-lg font-bold">Core Specialties</h3>
+                    <p className="text-muted-foreground text-sm">Where I sharpen my craft daily</p>
+                  </div>
+                </div>
+                <div className="flex flex-wrap gap-3 md:ml-auto">
+                  {skills.specialties.map((item) => (
+                    <div
+                      key={item}
+                      className="flex items-center gap-2 px-4 py-2 rounded-full bg-purple-vibrant text-foreground font-semibold border border-modern-purple/30 hover:bg-modern-purple hover:text-white transition-colors duration-200"
+                    >
+                      <Trophy className="w-4 h-4" />
+                      {item}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
           <div className="grid md:grid-cols-3 gap-8">
             <Card className="bg-card shadow-lg border-0 rounded-2xl hover:shadow-xl transition-all duration-300 hover:-translate-y-2 group">
               <CardHeader className="pb-4">
@@ -354,18 +378,24 @@ const Index = () => {
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {projects.map((project, index) => (
-              <Card key={index} className="bg-card shadow-lg border-0 rounded-2xl hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+              <Card key={index} className="bg-card shadow-lg border-0 rounded-2xl hover:shadow-xl transition-all duration-300 hover:-translate-y-2 flex flex-col">
                 <CardHeader>
                   <div className="flex items-center justify-between mb-2">
                     <Badge variant="outline" className="text-xs">{project.type}</Badge>
                     <ExternalLink className="w-4 h-4 text-muted-foreground" />
                   </div>
                   <CardTitle className="text-foreground text-lg">{project.title}</CardTitle>
-                  <CardDescription className="text-muted-foreground line-clamp-2">
+                  {project.role && (
+                    <div className="inline-flex items-center gap-2 mt-2 px-3 py-1 rounded-full bg-blue-vibrant text-primary text-xs font-semibold w-fit">
+                      <Briefcase className="w-3 h-3" />
+                      {project.role}
+                    </div>
+                  )}
+                  <CardDescription className="text-muted-foreground mt-3 leading-relaxed">
                     {project.description}
                   </CardDescription>
                 </CardHeader>
-                <CardContent>
+                <CardContent className="mt-auto">
                   <div className="space-y-4">
                     <div className="flex flex-wrap gap-2">
                       {project.tech.map((tech) => (
