@@ -378,18 +378,24 @@ const Index = () => {
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {projects.map((project, index) => (
-              <Card key={index} className="bg-card shadow-lg border-0 rounded-2xl hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+              <Card key={index} className="bg-card shadow-lg border-0 rounded-2xl hover:shadow-xl transition-all duration-300 hover:-translate-y-2 flex flex-col">
                 <CardHeader>
                   <div className="flex items-center justify-between mb-2">
                     <Badge variant="outline" className="text-xs">{project.type}</Badge>
                     <ExternalLink className="w-4 h-4 text-muted-foreground" />
                   </div>
                   <CardTitle className="text-foreground text-lg">{project.title}</CardTitle>
-                  <CardDescription className="text-muted-foreground line-clamp-2">
+                  {project.role && (
+                    <div className="inline-flex items-center gap-2 mt-2 px-3 py-1 rounded-full bg-blue-vibrant text-primary text-xs font-semibold w-fit">
+                      <Briefcase className="w-3 h-3" />
+                      {project.role}
+                    </div>
+                  )}
+                  <CardDescription className="text-muted-foreground mt-3 leading-relaxed">
                     {project.description}
                   </CardDescription>
                 </CardHeader>
-                <CardContent>
+                <CardContent className="mt-auto">
                   <div className="space-y-4">
                     <div className="flex flex-wrap gap-2">
                       {project.tech.map((tech) => (
