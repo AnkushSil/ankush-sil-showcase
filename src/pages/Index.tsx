@@ -1,35 +1,40 @@
 import React from 'react';
-import { Mail, MapPin, Github, Linkedin, ExternalLink, Calendar, Award, Users, Code, Briefcase, GraduationCap, Star, Download, Phone } from 'lucide-react';
+import { Mail, MapPin, Github, Linkedin, ExternalLink, Calendar, Award, Users, Code, Briefcase, GraduationCap, Star, Download, Phone, Cpu, Trophy } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import ContactForm from '@/components/ContactForm';
+import ankushProfile from '@/assets/ankush-profile.jpg';
 
 const Index = () => {
   const skills = {
-    technical: ['Java', 'Python', 'MySQL', 'CSS', 'HTML', 'Cloud Computing', 'AWS'],
+    technical: ['Java', 'Python', 'Node.js', 'MySQL', 'MongoDB', 'CSS', 'HTML', 'Cloud Computing', 'AWS'],
     soft: ['Problem Solving', 'Communication', 'Teamwork', 'Time Management'],
-    tools: ['AWS', 'OpenAI', 'MySQL Workbench', 'TinkerCAD', 'Blender', 'KiCad']
+    tools: ['AWS', 'OpenAI', 'Google Gemini API', 'MySQL Workbench', 'TinkerCAD', 'Blender', 'KiCad'],
+    specialties: ['Advanced DSA in Java', 'Competitive Programming']
   };
 
   const projects = [
     {
-      title: 'Hotel Management System',
-      description: 'Desktop app for hotel booking, billing, and room tracking',
-      tech: ['Python', 'Tkinter', 'MySQL'],
-      github: 'https://github.com/AnkushSil/Hotel_Management_System',
+      title: 'CodeCollab',
+      role: 'Backend Infrastructure Engineer',
+      description: 'A real-time developer platform. Engineered the backend architecture using Node.js and Express to build scalable REST APIs for authentication and storage. Implemented WebSocket events via Socket.io to manage concurrent user sessions, achieving sub-100ms sync latency. Secured routes using Role-Based Access Control (RBAC) with JWT tokenization and bcrypt hashing. Orchestrated the integration of external Code Execution APIs to process code submissions and stream real-time output directly to the frontend.',
+      tech: ['Node.js', 'Express', 'Socket.io', 'MongoDB', 'JWT'],
+      github: 'https://github.com/AnkushSil',
+      type: 'Group Project'
+    },
+    {
+      title: 'SaralLoan',
+      role: 'Full Stack / AI Engineer',
+      description: 'A Conversational AI FinTech Loan Assistant. Architected a mobile-first underwriting system featuring an AI-driven chat assistant for real-time financial queries and personalized loan offers. Engineered a robust REST API with Node.js and natively integrated the Google Gemini API for fast context parsing, reducing query latency by 30%. Implemented secure OTP authentication and deployed the entire microservices architecture on Render for high availability.',
+      tech: ['Node.js', 'Google Gemini API', 'MongoDB', 'Render'],
+      github: 'https://github.com/AnkushSil',
       type: 'Solo Project'
     },
     {
-      title: 'Genius – AI SaaS Multimedia Generator',
-      description: 'Multimedia AI platform: image, audio, video, and code generation',
-      tech: ['Next.js 13', 'React', 'Tailwind CSS', 'Prisma', 'Stripe'],
-      github: 'https://github.com/AnkushSil/Saas-AI-Platform',
-      type: 'Team of 5'
-    },
-    {
       title: 'Aqua Cloud Innovators – Water Harvesting',
-      description: 'Nanotech + biomimicry-based water harvesting concept',
+      role: '3D Filter Design & Research',
+      description: 'Nanotech + biomimicry-based water harvesting concept developed for SIH 2023. Contributed to 3D filter design and research using Blender and TinkerCAD, with FDM 3D printing for prototyping.',
       tech: ['Blender', 'TinkerCAD', 'FDM 3D Printing'],
       github: 'https://github.com/AnkushSil/AQUA-CLOUD-INNOVATORS-PROJECT-SIH_2023',
       type: 'Team of 6'
@@ -38,19 +43,14 @@ const Index = () => {
 
   const certifications = [
     {
-      title: 'Getting Started with Enterprise-grade AI',
-      issuer: 'IBM',
-      date: 'Jan–Feb 2024'
+      title: 'Applied Machine Learning in Python',
+      issuer: 'University of Michigan (Coursera)',
+      date: 'Dec 2025'
     },
     {
-      title: 'Journey to Cloud: Envisioning Your Solution',
-      issuer: 'IBM',
-      date: 'Jun–Jul 2023'
-    },
-    {
-      title: 'Getting Started with Enterprise Data Science',
-      issuer: 'IBM',
-      date: 'Jul 2023'
+      title: 'HTML, CSS, and JavaScript for Web Developers',
+      issuer: 'Johns Hopkins University (Coursera)',
+      date: 'Oct 2025'
     }
   ];
 
