@@ -101,9 +101,9 @@ const Index = () => {
                 <h1 className="text-5xl lg:text-6xl font-bold text-foreground leading-tight">
                   Hi, I'm <span className="text-primary">Ankush Sil</span>
                 </h1>
-                <h2 className="text-2xl text-modern-purple font-semibold">Junior Software Developer</h2>
+                <h2 className="text-2xl text-modern-purple font-semibold">Software Developer & Cloud Engineer</h2>
                 <p className="text-xl text-muted-foreground leading-relaxed">
-                  Software Developer Intern passionate about cloud computing and AI innovation
+                  Passionate about building scalable systems, cloud infrastructure, and AI-driven innovation
                 </p>
               </div>
               
